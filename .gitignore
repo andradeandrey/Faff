@@ -16,9 +16,8 @@ _obj
 _test
 src/pkg/Make.deps
 _testmain.go
-www/pfaffind
-static/mathjax-MathJax-20e0cf6-nogit
-petar
+main/faff
+static/mathjax
 
 syntax:regexp
 ^pkg/
