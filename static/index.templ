@@ -1,0 +1,115 @@
+<!doctype html>
+  <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
+  <!--[if (gt IE 6)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <title>{Page.Title} by {Page.Author}</title>
+    <meta name="description" content="{Page.Title}">
+    <meta name="author" content="{Page.Author}">
+
+    <meta property="og:title" content="{Page.Title} by {Page.Author}" />
+      <meta property="og:type" content="non_profit" />
+      <meta property="og:url" content="http://{Page.RootURL}" />
+      <meta property="og:image" content="http://{Page.RootURL}/s/img/logo.jpg" />
+      <meta property="og:site_name" content="{Page.Author}" />
+      <meta property="fb:admins" content="{Page.FacebookAdminID}" />
+
+    <!-- favicon 16x16 -->
+    <link rel="shortcut icon" href="/s/favicon.ico">
+    <!-- apple touch icon 57x57 -->
+    <link rel="apple-touch-icon" href="/s/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="/s/css/scren.css?v=1.0">
+    <link rel="stylesheet" href="/s/css/main.css?v=1.0">
+  </head>
+
+  <body class="home">
+
+    <aside id="sidebar">
+      <div id="logo"></div>
+      <div id="logotext">¡Mi avatar!</div>
+      <div id="follow">
+        <ul>
+          <li class="wggl"><a href="http://twitter.com/{Page.AuthorTwitter}"><img src="/s/img/tw2-icon.png" /> Me on Twitter</a></li>
+        </ul>
+      </div>
+    <div id="twfb">
+      <!-- twitter -->
+      <div id="tw">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"
+          data-via="{Page.AuthorTwitter}" data-related="{Page.Title} by {Page.Author}">Tweet</a><script
+          type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+      </div>
+      <!-- facebook -->
+      <div id="fb">
+        <iframe
+          src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F{Page.RootURL}&amp;layout=box_count&amp;show_faces=true&amp;width=55&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=65"
+          scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px;
+          height:65px;" allowTransparency="true"></iframe>
+      </div>
+    </div><!-- twfb -->
+    </aside>
+
+    <div id="header">
+    {Page.TitleHTML}
+    <h3>{Page.SubTitle}</h3>
+    </div>
+
+    <div id="main" class="index">
+    <dl>
+      {.repeated section Index}
+      <dt><a href="{URL}" data-disqus-identifier="{ID}">{Title}</a> 
+      <span class="created">{Created}</span></dt>
+        <dd>{.repeated section Tags}<span class="tag">{@}</span>{.or}{.end}</dd>
+        {.section Exerpt}<dd class="exerpt">{@}<a href="{URL}">...Read more</a></dd>{.end}
+      {.or}
+      <dt>No articles.</dt>
+      {.end}
+    </dl>
+    </div>
+
+  <div id="f1">
+  <!-- div id="license" class="drop-shadow curved curved-hz-1 rounded">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative
+    Commons License" style="border-width:0"
+    src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span
+    xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+    property="dct:title" rel="dct:type">{Page.Title}</span> (all content and algorithm
+  designs) by <a
+    xmlns:cc="http://creativecommons.org/ns#" href="http://pdos.csail.mit.edu/~petar/"
+    property="cc:attributionName" rel="cc:attributionURL">{Page.Author}</a> is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons
+    Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a
+    xmlns:dct="http://purl.org/dc/terms/" href="http://{Page.RootURL}"
+    rel="dct:source">{Page.RootURL}</a>.
+</div-->
+  <p>Written by <a href="http://pdos.csail.mit.edu/~petar/">Petar Maymounkov</a> on
+  <a href="http://golang.org">Go</a> and <a href="http://github.com/petar/GoHTTP">GoHTTP</a> in 2011</p>
+  <div class="licenseimg">
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative
+        Commons License" style="border-width:0"
+        src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a>
+    </div>
+  </div>
+
+      <script>
+        var disqus_developer = {Page.DisqusDevMode};
+        var disqus_shortname = '{Page.DisqusShortname}';
+      </script>
+      <script type="text/javascript" src="/s/js/disqus-index.js"></script>
+
+      <script type="text/javascript" src="/s/js/underscore-min.js"></script>
+      <script type="text/javascript" src="/s/js/jquery-1.4.4.min.js"></script>
+
+      <script type="text/javascript" src="/s/js/mathjax.js"></script>
+      <script type="text/javascript" src="/s/mathjax/MathJax.js">configMathJax();</script>
+
+      <script type="text/javascript" src="/s/js/post-main.js"></script>
+
+      <script>var google_analytics_id = '{Page.GoogleAnalyticsID}'</script>
+      <script type="text/javascript" src="/s/js/ga.js"></script>
+
+  </body>
+</html>

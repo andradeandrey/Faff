@@ -1,0 +1,29 @@
+@font-face {
+	font-family: Chunk;
+	src: url(../fonts/Chunk.otf) format("opentype");
+}
+
+@font-face {
+	font-family: LatoBlack;
+	src: url(../fonts/Lato/Lato-Black.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: LatoLight;
+	src: url(../fonts/Lato/Lato-Light.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: LatoHairline;
+	src: url(../fonts/Lato/Lato-Hairline.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: LatoBold;
+	src: url(../fonts/Lato/Lato-Bold.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: LatoRegular;
+	src: url(../fonts/Lato/Lato-Regular.ttf) format("truetype");
+}

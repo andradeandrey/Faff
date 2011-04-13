@@ -1,0 +1,32 @@
+@import url('lato.css');
+@import url('../fonts/ChaparralPro/f.css');
+
+@font-face {
+	font-family: FertigoPro;
+	src: url(/s/fonts/FertigoPro.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Megalopo;
+	src: url(/s/fonts/MegalopolisExtra.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Junction;
+	src: url(/s/fonts/Junction.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Chunk;
+	src: url(/s/fonts/Chunk.otf) format("opentype");
+}
+
+@font-face {
+	font-family: CallunaRegular;
+	src: url(/s/fonts/CallunaRegular.otf) format("opentype");
+}
+
+@font-face {
+	font-family: Blackout2am;
+	src: url(/s/fonts/Blackout2am.ttf) format("truetype");
+}

@@ -1,0 +1,3 @@
+
+* mark first publishable release of post by tagging or some such GIT-wise mechanism
+* drop the POSTFS file altogether

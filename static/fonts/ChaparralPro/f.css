@@ -1,0 +1,14 @@
+@font-face {
+	font-family: ChaparralProRegular;
+	src: url(ChaparralPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+	font-family: ChaparralProLightIt;
+	src: url(ChaparralPro-LightIt.otf) format("opentype");
+}
+
+@font-face {
+	font-family: ChaparralProSemiboldDisp;
+	src: url(ChaparralPro-SemiboldDisp.otf) format("opentype");
+}
