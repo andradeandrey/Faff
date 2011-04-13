@@ -13,10 +13,12 @@ over a month now with no downtime. Some features include:
 * Integrated DISQUS threads
 * Integrated Tweet and Facebook like buttons
 * Tagging
+* Support for LaTeX math using [MathJax](http://www.mathjax.org)
 
 There are many features that will come as the need arises:
 
 * Search by keywords or tags
+* Themes
 * Pages
 * etc.
 
@@ -39,6 +41,12 @@ Build the Faff sever
 
 	cd Faff-git
 	make && make install
+
+Unpack the [MathJax](http://www.mathjax.org) distribution somewhere on your machine,
+and create a symbolic link to it inside Faff's static files directory
+
+	cd Faff-git/static
+	ln -s path-to-root-of-mathjax mathjax
 
 Create a config file for your server. You can see an example in
 
