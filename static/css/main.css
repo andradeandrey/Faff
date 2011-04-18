@@ -133,7 +133,7 @@ h3 { font-size: 22px; }
 	text-decoration: none;
 	text-shadow: inherit;
 }
-#header a:hover {
+#header a:hover, #header a *:hover {
 	opacity: 0.8;
 }
 
