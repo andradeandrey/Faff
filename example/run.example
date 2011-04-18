@@ -1,0 +1,7 @@
+#!/bin/sh
+faff \
+	-bind=:23233 \
+	-config=/Users/petar/Faff-git/example/example.config \
+	-dir=/Users/petar/popalg.org-git \
+	-static=/Users/petar/Faff-git/static \
+	-site=/Users/petar/Faff-git/example/site

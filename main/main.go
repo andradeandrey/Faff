@@ -26,6 +26,7 @@ func envOrDefault(cmd, dfl string) string {
 
 var (
 	flagStaticDir = flag.String("static", "", "Path to framework static directory")
+	flagSiteDir   = flag.String("site", "", "Path to site-specific static directory")
 	flagDir       = flag.String("dir", "", "Path to content GIT directory")
 	flagBind      = flag.String("bind", "0.0.0.0:80", "Address to bind web server to")
 	flagGIT       = flag.String("git", envOrDefault("git", "/usr/local/git/bin/git"), "GIT command name")
@@ -34,7 +35,7 @@ var (
 )
 
 func main() {
-	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@csail.mit.edu\n")
+	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@5ttt.org\n")
 	flag.Parse()
 
 	config, err := ParseSiteConfig(*flagConfig)
@@ -56,6 +57,7 @@ func main() {
 		os.Exit(1)
 	}
 	srv.AddSub("/s/", subs.NewStaticSub(*flagStaticDir))	
+	srv.AddSub("/t/", subs.NewStaticSub(*flagSiteDir))	
 	fmt.Printf("Faff server running ...\n")
 	for {
 		q, err := srv.Read()
