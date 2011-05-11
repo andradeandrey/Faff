@@ -14,5 +14,6 @@ GOFILES=\
 	git.go\
 	site.go\
 	page.go\
+	dbg.go\
 
 include $(GOROOT)/src/Make.cmd

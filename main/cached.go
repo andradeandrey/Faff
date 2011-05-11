@@ -9,6 +9,7 @@ import (
 	"sync"
 )
 
+// ShouldReread keeps track of whether a file has been updated since last reading it.
 type ShouldReread struct {
 	fname string
 	mtime int64

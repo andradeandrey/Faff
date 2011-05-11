@@ -64,6 +64,7 @@ func Run(prog, dir string, argv []string) ([]string, os.Error) {
 		r = append(r, string(l))
 	}
 	if err != nil && err != os.EOF {
+		cmd.Close()
 		return nil, err
 	}
 	err = cmd.Close()

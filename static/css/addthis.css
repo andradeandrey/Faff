@@ -1,0 +1,19 @@
+
+div#addthis {
+	text-align: center;
+	margin: auto auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#addthis a, #addthis a:link, #addthis a:hover, #addthis a:visited { 
+	padding: 0;
+	margin: 0;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+#addthis a:hover {
+	text-decoration: none;
+	background: none;
+}

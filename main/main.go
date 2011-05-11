@@ -37,6 +37,7 @@ var (
 func main() {
 	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@5ttt.org\n")
 	flag.Parse()
+	MonitorMemProfile()
 
 	config, err := ParseSiteConfig(*flagConfig)
 	if err != nil {
