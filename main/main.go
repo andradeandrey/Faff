@@ -14,6 +14,7 @@ import (
 	"github.com/petar/GoHTTP/http"
 	"github.com/petar/GoHTTP/server"
 	"github.com/petar/GoHTTP/server/subs"
+	"github.com/petar/GoGauge/pprof"
 )
 
 func envOrDefault(cmd, dfl string) string {
@@ -35,6 +36,7 @@ var (
 )
 
 func main() {
+	pprof.InstallPprof()
 	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@5ttt.org\n")
 	flag.Parse()
 	MonitorMemProfile()
@@ -70,11 +72,11 @@ func main() {
 		var resp *http.Response
 		url := q.Req.URL
 		if url == nil {
-			resp = http.NewResponse404String("could not parse URL")
+			resp = http.NewResponse404String(q.Req, "could not parse URL")
 		} else {
-			resp, err = respond(url)
+			resp, err = respond(q.Req, url)
 			if err != nil {
-				resp = http.NewResponse404String(err.String())
+				resp = http.NewResponse404String(q.Req, err.String())
 			}
 		}
 		q.ContinueAndWrite(resp)
@@ -83,7 +85,7 @@ func main() {
 
 var postman *PostMan
 
-func respond(url *http.URL) (resp *http.Response, err os.Error) {
+func respond(req *http.Request, url *http.URL) (resp *http.Response, err os.Error) {
 	var body io.ReadCloser
 	if url.Path == "/" {
 		body, err = postman.RenderIndex()
@@ -96,5 +98,5 @@ func respond(url *http.URL) (resp *http.Response, err os.Error) {
 	if err != nil {
 		return nil, err
 	}
-	return http.NewResponseWithBody(body), nil
+	return http.NewResponseWithBody(req, body), nil
 }
