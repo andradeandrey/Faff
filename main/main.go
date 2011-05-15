@@ -30,13 +30,14 @@ var (
 	flagSiteDir   = flag.String("site", "", "Path to site-specific static directory")
 	flagDir       = flag.String("dir", "", "Path to content GIT directory")
 	flagBind      = flag.String("bind", "0.0.0.0:80", "Address to bind web server to")
+	flagPProf     = flag.String("pprof", "0.0.0.0:5500", "Address to bind pprof HTTP server to")
 	flagGIT       = flag.String("git", envOrDefault("git", "/usr/local/git/bin/git"), "GIT command name")
 	flagMode      = flag.String("mode", "dev", "Choose between 'dev' and 'prod' mode")
 	flagConfig    = flag.String("config", "", "Name of site config file")
 )
 
 func main() {
-	pprof.InstallPprof()
+	pprof.InstallPProfHTTP(*flagPProf)
 	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@5ttt.org\n")
 	flag.Parse()
 	MonitorMemProfile()
