@@ -37,13 +37,12 @@ var (
 )
 
 func main() {
-	if *flagPprof != "" {
-		pprof.StartLogging(*flagPprof, 30*60e9) // Once every 30 mins
-	}
-
 	fmt.Fprintf(os.Stderr, "Faff — 2011 — by Petar Maymounkov, petar@5ttt.org\n")
 	flag.Parse()
 	MonitorMemProfile()
+	if *flagPprof != "" {
+		pprof.StartLogging(*flagPprof, 30*60*1e9) // Once every 30 mins
+	}
 
 	config, err := ParseSiteConfig(*flagConfig)
 	if err != nil {
