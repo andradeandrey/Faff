@@ -54,7 +54,7 @@ type PostPage struct {
 	Post *Post
 }
 
-const PostTimeLayout = "02 Jan 06, 3:04PM"
+const PostTimeLayout = "Jan _2, 2006"
 
 // make and init postman
 func NewPostMan(gitCmd, templDir, postDir, disqusDevMode string, config *SiteConfig) *PostMan {

@@ -27,31 +27,6 @@
 
     <body class="home">
 
-    <aside id="sidebar">
-      <div id="logo"></div>
-      <div id="logotext">¡Mi avatar!</div>
-      <div id="follow">
-        <ul>
-          <li class="wggl"><a href="http://twitter.com/{Page.AuthorTwitter}"><img src="/s/img/tw2-icon.png" /> Me on Twitter</a></li>
-        </ul>
-      </div>
-
-    <div id="twfb">
-      <!-- twitter -->
-      <div id="tw">
-        <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"
-          data-via="{Page.AuthorTwitter}" data-related="{Post.Title} by {Page.Author}">Tweet</a><script
-          type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      </div>
-      <!-- facebook -->
-      <div id="fb">
-        <iframe
-          src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F{Page.RootURL}{Post.URL}&amp;layout=box_count&amp;show_faces=true&amp;width=55&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=65"
-          scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px;
-          height:65px;" allowTransparency="true"></iframe>
-      </div>
-    </div><!-- twfb -->
-    </aside>
 
       <div id="header">
       <a href="http://{Page.RootURL}">{Page.TitleHTML}</a>
@@ -59,6 +34,28 @@
       </div>
 
       <div id="main" class="post">
+
+	    <div id="sidebar">
+	      <div id="logo"></div>
+	      <div id="logotext">¡Mi avatar!</div>
+
+	    <div id="twfb">
+	      <!-- twitter -->
+	      <div id="tw">
+		<a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical"
+		  data-via="{Page.AuthorTwitter}" data-related="{Post.Title} by {Page.Author}">Tweet</a><script
+		  type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	      </div>
+	      <!-- facebook -->
+	      <div id="fb">
+		<iframe
+		  src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F{Page.RootURL}{Post.URL}&amp;layout=box_count&amp;show_faces=true&amp;width=55&amp;action=like&amp;font=lucida+grande&amp;colorscheme=dark&amp;height=65"
+		  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:55px;
+		  height:65px;" allowTransparency="true"></iframe>
+	      </div>
+	    </div><!-- twfb -->
+	    </div>
+
       <h2>{Post.Title}</h2>
       <div class="body">
         {Post.Body}

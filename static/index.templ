@@ -27,6 +27,13 @@
 
   <body class="home">
 
+    <div id="header">
+    {Page.TitleHTML}
+    <h3>{Page.SubTitle}</h3>
+    </div>
+
+    <div id="main" class="index">
+
     <aside id="sidebar">
       <div id="logo"></div>
       <div id="logotext">¡Mi avatar!</div>
@@ -52,18 +59,12 @@
     </div><!-- twfb -->
     </aside>
 
-    <div id="header">
-    {Page.TitleHTML}
-    <h3>{Page.SubTitle}</h3>
-    </div>
-
-    <div id="main" class="index">
     <dl>
       {.repeated section Index}
       <dt><a href="{URL}" data-disqus-identifier="{ID}">{Title}</a> 
       <span class="created">{Created}</span></dt>
-        <dd>{.repeated section Tags}<span class="tag">{@}</span>{.or}{.end}</dd>
-        {.section Exerpt}<dd class="exerpt">{@}<a href="{URL}">...Read more</a></dd>{.end}
+        <!--dd>{.repeated section Tags}<span class="tag">{@}</span>{.or}{.end}</dd-->
+        {.section Exerpt}<!-- dd class="exerpt">{@}<a href="{URL}">...Read more</a></dd-->{.end}
       {.or}
       <dt>No articles.</dt>
       {.end}
