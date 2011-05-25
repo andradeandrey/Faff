@@ -36,6 +36,16 @@ a:link { }
 
 a:visited { }
 
+a.anchor, a.anchor:link, a.anchor:visited, a.anchor:hover {
+	color: inherit;
+	border: inherit;
+	padding: inherit;
+	margin: inherit;
+	background: inherit;
+	text-decoration: inherit;
+	text-shadow: inherit;
+}
+
 h1, h2, h3, h4, h5 { 
 	color: #9f8080;
 	font-family: LatoItalic, ChaparralProRegular, Georgia, sans-serif;
