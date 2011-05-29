@@ -7,7 +7,6 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"encoding/line"
 	//"fmt"
 	"io"
 	"io/ioutil"
@@ -168,10 +167,9 @@ func (pm *PostMan) Parse(urlPath string) (*Post, os.Error) {
 	}
 
 	// Read title and body
-	liner := line.NewReader(bufr, 2000)
 	var title string
 	for {
-		title0, _, err := liner.ReadLine()
+		title0, _, err := bufr.ReadLine()
 		if err != nil {
 			log.Printf("Problem: Reading title of '%s': (%s)\n", postfileRel, err)
 			return nil, err
@@ -188,7 +186,7 @@ func (pm *PostMan) Parse(urlPath string) (*Post, os.Error) {
 	exerpt := ""
 	body := []byte{}
 	for {
-		line, _, err := liner.ReadLine()
+		line, _, err := bufr.ReadLine()
 		if err != nil {
 			if err == os.EOF {
 				break

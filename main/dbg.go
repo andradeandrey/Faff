@@ -15,6 +15,7 @@ func MonitorMemProfile() {
 		for {
 			time.Sleep(10e9)
 			mem, _ := runtime.MemProfile(nil, false)
+			runtime.GC()
 			log.Printf("Mem# %d\n", mem)
 		}
 	}()

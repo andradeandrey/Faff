@@ -5,7 +5,7 @@
 package main
 
 import (
-	"encoding/line"
+	"bufio"
 	//"fmt"
 	"io"
 	"log"
@@ -117,7 +117,10 @@ var lineRegExp = regexp.MustCompile(`^([^\t ]+)([\t ]+)([^\t ]+)$`)
 
 func parsePostFSConfig(r io.Reader) (chro []*postInfo, err os.Error) {
 	chro = []*postInfo{}
-	lr := line.NewReader(r, 2000)
+	lr, err := bufio.NewReaderSize(r, 2000)
+	if err != nil {
+		return nil, err
+	}
 	for {
 		l, isprefix, err0 := lr.ReadLine()
 		if err0 != nil {

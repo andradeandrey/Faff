@@ -5,7 +5,7 @@
 package main
 
 import (
-	"encoding/line"
+	"bufio"
 	"exec"
 	//"fmt"
 	"path"
@@ -53,7 +53,10 @@ func Run(prog, dir string, argv []string) ([]string, os.Error) {
 	if err != nil {
 		return []string{""}, err
 	}
-	liner := line.NewReader(cmd.Stdout, 2000)
+	liner, err := bufio.NewReaderSize(cmd.Stdout, 2000)
+	if err != nil {
+		return nil, err
+	}
 	r := []string{}
 	var l []byte
 	for {
