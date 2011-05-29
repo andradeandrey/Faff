@@ -51,10 +51,14 @@ func GITGetAddTimes(gitcmd, repo, filename string) ([]*time.Time, os.Error) {
 func Run(prog, dir string, argv []string) ([]string, os.Error) {
 	cmd, err := exec.Run(prog, argv, nil, dir, exec.Pipe, exec.Pipe, exec.Pipe)
 	if err != nil {
+		if cmd != nil {
+			cmd.Close()
+		}
 		return []string{""}, err
 	}
 	liner, err := bufio.NewReaderSize(cmd.Stdout, 2000)
 	if err != nil {
+		cmd.Close()
 		return nil, err
 	}
 	r := []string{}
